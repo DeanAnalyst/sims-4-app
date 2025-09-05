@@ -32,6 +32,23 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
     with TickerProviderStateMixin {
   late AnimationController _slideController;
   late AnimationController _fadeController;
+  TransformationController? _transformationController;
+  Animation<Matrix4>? _resetAnimation;
+  late AnimationController _resetController;
+
+  void _onInteractionEnd(ScaleEndDetails details) {
+    // Reset zoom if scale is too small
+    if (_transformationController!.value.getMaxScaleOnAxis() < 0.8) {
+      _resetAnimation =
+          Matrix4Tween(
+            begin: _transformationController!.value,
+            end: Matrix4.identity(),
+          ).animate(
+            CurvedAnimation(parent: _resetController, curve: Curves.easeInOut),
+          );
+      _resetController.forward(from: 0);
+    }
+  }
 
   @override
   void initState() {
@@ -40,6 +57,16 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
       duration: AppTheme.mediumAnimation,
       vsync: this,
     );
+    _transformationController = TransformationController();
+    _resetController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400),
+    );
+    _resetController.addListener(() {
+      if (_resetAnimation != null) {
+        _transformationController!.value = _resetAnimation!.value;
+      }
+    });
     _fadeController = AnimationController(
       duration: AppTheme.shortAnimation,
       vsync: this,
@@ -55,6 +82,8 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
   void dispose() {
     _slideController.dispose();
     _fadeController.dispose();
+    _resetController.dispose();
+    _transformationController?.dispose();
     super.dispose();
   }
 
@@ -140,10 +169,14 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
                     children: [
                       // Interactive World Map with zoom capability
                       InteractiveViewer(
-                        minScale: 1.0,
-                        maxScale: 5.0,
-                        boundaryMargin: const EdgeInsets.all(20),
+                        minScale: 0.5,
+                        maxScale: 4.0,
+                        boundaryMargin: const EdgeInsets.all(50),
                         constrained: false,
+                        scaleEnabled: true,
+                        panEnabled: true,
+                        onInteractionEnd: _onInteractionEnd,
+                        transformationController: _transformationController,
                         child: SimpleMap(
                           key: ValueKey('world_map_${selectedRegion.name}'),
                           instructions: SMapWorld.instructions,
@@ -322,21 +355,21 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
     }
   }
 
-  Map<String, String> _getCountryColorsAsMap() {
+  Map<String, Color> _getCountryColorsAsMap() {
     try {
       final selectedRegion = ref.watch(selectedRegionProvider);
       final theme = Theme.of(context);
       final colorScheme = theme.colorScheme;
 
-      // Convert colors to hex strings properly
-      final selectedColorHex = _colorToHex(colorScheme.secondary);
-      final defaultColorHex = theme.brightness == Brightness.dark
-          ? _colorToHex(colorScheme.outline.withValues(alpha: 0.3))
-          : _colorToHex(colorScheme.outline.withValues(alpha: 0.2));
+      // Get colors for the map
+      final selectedColor = colorScheme.secondary;
+      final defaultColor = theme.brightness == Brightness.dark
+          ? colorScheme.outline.withValues(alpha: 0.3)
+          : colorScheme.outline.withValues(alpha: 0.2);
 
       debugPrint('Getting country colors for region: $selectedRegion');
       debugPrint(
-        'Selected color: $selectedColorHex, Default color: $defaultColorHex',
+        'Selected color: ${_colorToHex(selectedColor)}, Default color: ${_colorToHex(defaultColor)}',
       );
 
       // Get countries that should be highlighted for this region
@@ -347,24 +380,24 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
         'Countries in $selectedRegion: ${countriesInRegion.join(', ')} (${countriesInRegion.length} total)',
       );
 
-      final Map<String, String> colors = {};
+      final Map<String, Color> colors = {};
 
       // Set all countries to default color first
       final allCountries = CountryMappingService.getAllCountryCodes();
       for (final countryCode in allCountries) {
-        colors[countryCode] = defaultColorHex;
+        colors[countryCode] = defaultColor;
       }
 
       // Highlight countries in the selected region with brighter color
       for (final countryCode in countriesInRegion) {
-        colors[countryCode] = selectedColorHex;
+        colors[countryCode] = selectedColor;
       }
 
       debugPrint('Generated ${colors.length} country colors');
 
       // Debug: Show which countries are getting the selected color
       final highlightedCountries = colors.entries
-          .where((entry) => entry.value == selectedColorHex)
+          .where((entry) => entry.value == selectedColor)
           .map((entry) => entry.key)
           .toList();
       debugPrint(

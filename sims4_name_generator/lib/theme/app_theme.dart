@@ -22,14 +22,15 @@ class AppTheme {
 
   // Dark theme colors
   static const Color _darkPrimary = Color(
-    0xFFF2D7D5,
-  ); // pastel pink, matches light theme
-  static const Color _darkSecondary =
-      _secondaryMistyRose; // Use same pastel pink as light theme
-  static const Color _darkSurface = Color(0xFF121212);
-  static const Color _darkOnSurface = Color(0xFFE0E0E0);
-  static const Color _darkGradientStart = Color(0xFF1A1A1A);
-  static const Color _darkGradientEnd = Color(0xFF2D2D2D);
+    0xFFE1BEE7,
+  ); // Primary mauve from light theme
+  static const Color _darkSecondary = Color(
+    0xFFE1BEE7,
+  ); // Primary mauve from light theme
+  static const Color _darkSurface = Color(0xFF0A0A0A); // Deeper black
+  static const Color _darkOnSurface = Color(0xFFF5F5F5); // Brighter white
+  static const Color _darkGradientStart = Color(0xFF0A0A0A); // Deeper black
+  static const Color _darkGradientEnd = Color(0xFF1A1A1A); // Dark gray
 
   // Animation durations
   static const Duration _shortAnimation = Duration(milliseconds: 200);
@@ -237,19 +238,19 @@ class AppTheme {
         secondary: _darkSecondary,
         tertiary: _accentLightMediumOrchid,
         surface: _darkSurface,
-        onPrimary: _darkOnSurface,
-        onSecondary: _darkOnSurface,
+        onPrimary: _darkSurface,
+        onSecondary: _darkSurface,
         onSurface: _darkOnSurface,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: _darkPrimary,
-        foregroundColor: _darkOnSurface,
+        backgroundColor: _primaryMauve,
+        foregroundColor: _textDarkCharcoal,
         elevation: 0,
         centerTitle: true,
         shadowColor: _accentLightMediumOrchid.withValues(alpha: 0.3),
         surfaceTintColor: _darkPrimary,
         titleTextStyle: const TextStyle(
-          color: _darkOnSurface,
+          color: _darkSurface,
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
@@ -257,8 +258,8 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style:
             ElevatedButton.styleFrom(
-              backgroundColor: _darkPrimary,
-              foregroundColor: _darkOnSurface,
+              backgroundColor: _primaryMauve,
+              foregroundColor: _textDarkCharcoal,
               shadowColor: _accentLightMediumOrchid.withValues(alpha: 0.4),
               elevation: 3,
               shape: RoundedRectangleBorder(

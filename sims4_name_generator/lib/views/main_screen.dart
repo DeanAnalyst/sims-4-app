@@ -124,8 +124,6 @@ class MainScreen extends ConsumerWidget {
           isDark,
         ),
         SizedBox(height: ResponsiveLayout.getCardSpacing(context)),
-        const WorldMapComponent(),
-        SizedBox(height: ResponsiveLayout.getCardSpacing(context)),
         const NameDisplayComponent(),
         SizedBox(height: ResponsiveLayout.getCardSpacing(context)),
         const LithuanianNameCustomizerComponent(),
@@ -240,9 +238,6 @@ class MainScreen extends ConsumerWidget {
             ),
           ],
         ),
-        SizedBox(height: ResponsiveLayout.getCardSpacing(context)),
-        // World Map right after region selection
-        const WorldMapComponent(),
         SizedBox(height: ResponsiveLayout.getCardSpacing(context)),
         // Second row: Extended controls and generation
         Row(
@@ -400,9 +395,6 @@ class MainScreen extends ConsumerWidget {
               ),
             ],
           ),
-          SizedBox(height: ResponsiveLayout.getCardSpacing(context)),
-          // World Map right after region selection
-          const WorldMapComponent(),
           SizedBox(height: ResponsiveLayout.getCardSpacing(context)),
           // Second row: marital status (if applicable) and generation buttons
           Row(
