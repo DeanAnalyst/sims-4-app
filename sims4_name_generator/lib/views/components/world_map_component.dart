@@ -37,8 +37,8 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
   late AnimationController _resetController;
 
   void _onInteractionEnd(ScaleEndDetails details) {
-    // Reset zoom if scale is too small
-    if (_transformationController!.value.getMaxScaleOnAxis() < 0.8) {
+    // Only reset if extremely zoomed out
+    if (_transformationController!.value.getMaxScaleOnAxis() < 0.5) {
       _resetAnimation =
           Matrix4Tween(
             begin: _transformationController!.value,
@@ -169,8 +169,8 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
                     children: [
                       // Interactive World Map with zoom capability
                       InteractiveViewer(
-                        minScale: 0.5,
-                        maxScale: 4.0,
+                        minScale: 0.8,
+                        maxScale: 5.0,
                         boundaryMargin: const EdgeInsets.all(50),
                         constrained: false,
                         scaleEnabled: true,
