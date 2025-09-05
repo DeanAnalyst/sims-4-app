@@ -60,7 +60,10 @@
       "Bash(del test_map.dart)",
       "Read(/C:\\Users\\Dean\\Dev\\sims 4 app\\sims4_name_generator\\lib\\views\\components/**)",
       "Read(/\\/**)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Read(/C:\\Users\\Dean\\Downloads/**)",
+      "Read(/C:\\Users\\Dean\\Downloads/**)",
+      "WebFetch(domain:pub.dev)"
     ],
     "deny": [],
     "ask": []

@@ -58,8 +58,13 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
     if (widget.height != null) return widget.height!;
 
     final screenHeight = MediaQuery.of(context).size.height;
-    final baseHeight = screenHeight * 0.5;
-    return baseHeight;
+    final screenWidth = MediaQuery.of(context).size.width;
+    
+    // Use more screen height and consider aspect ratio
+    final baseHeight = screenHeight * 0.65; // Increased from 0.5
+    final aspectBasedHeight = screenWidth * 0.6; // World map aspect ratio consideration
+    
+    return baseHeight.clamp(300.0, aspectBasedHeight);
   }
 
   @override
@@ -111,25 +116,26 @@ class _WorldMapComponentState extends ConsumerState<WorldMapComponent>
                 ),
                 gradient: LinearGradient(
                   colors: [
-                    colorScheme.secondary.withValues(alpha: 0.05),
-                    colorScheme.primary.withValues(alpha: 0.05),
+                    colorScheme.secondary.withValues(alpha: 0.02),
+                    colorScheme.primary.withValues(alpha: 0.02),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
               ),
-              alignment: Alignment.center,
               clipBehavior: Clip.hardEdge,
               child: InteractiveViewer(
-                minScale: 1.0,
-                maxScale: 4.0,
-                constrained: false,
+                minScale: 0.7,
+                maxScale: 5.0,
+                constrained: true,
                 scaleEnabled: true,
                 panEnabled: true,
                 boundaryMargin: EdgeInsets.zero,
-                child: SizedBox.expand(
-                  child: FittedBox(
-                    fit: BoxFit.fitHeight,
+                child: FittedBox(
+                  fit: BoxFit.contain,
+                  alignment: Alignment.center,
+                  child: AspectRatio(
+                    aspectRatio: 2.0,
                     child: SimpleMap(
                       key: ValueKey('world_map_${selectedRegion.name}'),
                       instructions: SMapWorld.instructions,
