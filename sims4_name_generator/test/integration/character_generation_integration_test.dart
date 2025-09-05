@@ -1,12 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:sims4_name_generator/models/enums.dart';
-import 'package:sims4_name_generator/models/name.dart';
-import 'package:sims4_name_generator/models/trait.dart';
 import 'package:sims4_name_generator/models/character_profile.dart';
-import 'package:sims4_name_generator/providers/character_providers.dart';
-import 'package:sims4_name_generator/providers/data_providers.dart';
-import 'package:sims4_name_generator/providers/state_providers.dart';
 import 'package:sims4_name_generator/repositories/name_repository.dart';
 import 'package:sims4_name_generator/repositories/trait_repository.dart';
 import 'package:sims4_name_generator/services/character_storage_service.dart';
