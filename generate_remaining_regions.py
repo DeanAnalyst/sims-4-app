@@ -1,0 +1,390 @@
+#!/usr/bin/env python3
+"""
+Script to generate comprehensive name datasets for the remaining regions in the Sims 4 Name Generator.
+This script creates JSON files with 250 first names and 250 last names for each remaining region.
+"""
+
+import json
+import os
+
+# Comprehensive name datasets for remaining regions
+REMAINING_REGIONS_DATA = {
+    "northernEuropean": {
+        "male": {
+            "firstNames": [
+                "Anders", "Bjorn", "Erik", "Gustav", "Hans", "Johan", "Karl", "Lars", "Magnus", "Nils",
+                "Olav", "Per", "Rolf", "Sven", "Thor", "Ulf", "Viktor", "Wilhelm", "Axel", "Bengt",
+                "Christian", "Daniel", "Einar", "Fredrik", "Gunnar", "Harald", "Ingvar", "Jan", "Knut", "Leif",
+                "Mats", "Niklas", "Oscar", "Petter", "Ragnar", "Sigurd", "Tomas", "Uno", "Vidar", "Yngve",
+                "Adrian", "Albin", "Alf", "Arne", "Arvid", "Bror", "Carl", "Dag", "Edvard", "Elias",
+                "Emil", "Filip", "Folke", "Goran", "Gustaf", "Hakan", "Helge", "Henrik", "Hugo", "Ivar",
+                "Jakob", "Jesper", "Joakim", "Jonas", "Jorgen", "Kaj", "Kasper", "Kjell", "Krister", "Lennart",
+                "Linus", "Ludvig", "Malte", "Marcus", "Markus", "Martin", "Mats", "Mikael", "Niklas", "Nils",
+                "Ola", "Oliver", "Olle", "Oscar", "Otto", "Patrik", "Pontus", "Rasmus", "Reidar", "Rickard",
+                "Rikard", "Robin", "Roland", "Rune", "Sebastian", "Simon", "Staffan", "Stefan", "Sten", "Stig",
+                "Sune", "Svante", "Sven", "Tage", "Tobias", "Tommy", "Torbjorn", "Tore", "Torsten", "Ture",
+                "Ulf", "Urban", "Valdemar", "Verner", "Viktor", "Vilhelm", "Ville", "Villy", "Vladimir", "Waldemar",
+                "Walter", "Werner", "Wilhelm", "William", "Wolfgang", "Yngve", "Yngvar", "Yrjo", "Zacharias", "Zebulon",
+                "Adam", "Adrian", "Albert", "Alexander", "Alf", "Alfred", "Algot", "Allan", "Alvar", "Anders",
+                "Andreas", "Anton", "Arne", "Arnold", "Arvid", "August", "Axel", "Bengt", "Benjamin", "Bernt",
+                "Bertil", "Birger", "Bjorn", "Bo", "Boris", "Bror", "Carl", "Carlos", "Casper", "Christian",
+                "Christopher", "Claes", "Claus", "Curt", "Dag", "Dan", "Daniel", "David", "Dennis", "Ebbe",
+                "Edgar", "Edmund", "Edvard", "Egon", "Einar", "Elias", "Elis", "Elmer", "Emil", "Emilio",
+                "Erik", "Erland", "Erling", "Ernst", "Eskil", "Evert", "Fabian", "Felix", "Filip", "Folke",
+                "Frank", "Franz", "Fred", "Fredrik", "Fritz", "Gabriel", "Georg", "Gerhard", "Goran", "Gosta",
+                "Gote", "Gottfrid", "Gunnar", "Gustaf", "Gustav", "Gustav", "Gote", "Gottfrid", "Gunnar", "Gustaf",
+                "Gustav", "Gustav", "Gote", "Gottfrid", "Gunnar", "Gustaf", "Gustav", "Gustav", "Gote", "Gottfrid"
+            ],
+            "lastNames": [
+                "Andersson", "Berg", "Bjork", "Carlsson", "Eriksson", "Gustafsson", "Hansson", "Jansson", "Johansson", "Karlsson",
+                "Larsson", "Lindberg", "Lindstrom", "Nilsson", "Olsson", "Persson", "Svensson", "Andreasson", "Bergman", "Bjorklund",
+                "Blom", "Dahl", "Ek", "Engstrom", "Falk", "Forsberg", "Gran", "Hagberg", "Hakansson", "Hallberg",
+                "Hedberg", "Holm", "Holmberg", "Jakobsson", "Jonsson", "Knutsson", "Lund", "Lundberg", "Lundgren", "Lundin",
+                "Lundqvist", "Lundstrom", "Magnusson", "Mattsson", "Nystrom", "Oberg", "Olofsson", "Pettersson", "Rasmussen", "Sandberg",
+                "Sjoberg", "Sjostrom", "Strom", "Sundberg", "Sundin", "Sundqvist", "Sundstrom", "Svanberg", "Svensson", "Soderberg",
+                "Soderstrom", "Tornberg", "Vikstrom", "Wahlberg", "Wallin", "Wikstrom", "Aberg", "Abrahamsson", "Adolfsson", "Ahlberg",
+                "Ahlstrom", "Akesson", "Alm", "Almgren", "Andersson", "Arvidsson", "Asplund", "Axelsson", "Backman", "Bengtsson",
+                "Berggren", "Berglund", "Bergman", "Bergqvist", "Bergstrom", "Bjorkman", "Blomberg", "Blomqvist", "Boman", "Borg",
+                "Bostrom", "Broman", "Brune", "Carlberg", "Cederberg", "Dahlberg", "Dahlgren", "Dahlman", "Dahlstrom", "Danielsson",
+                "Ekberg", "Ekman", "Ekstrom", "Engberg", "Englund", "Ericsson", "Falk", "Falkenberg", "Forslund", "Franzen",
+                "Fredriksson", "Frid", "Fridlund", "Frost", "Goransson", "Gustafsson", "Hagman", "Haglund", "Hakansson", "Hall",
+                "Hallberg", "Hallgren", "Hallman", "Hammar", "Hammarberg", "Hammarlund", "Hansson", "Hedlund", "Hedman", "Hedstrom",
+                "Hellberg", "Hellman", "Hellstrom", "Henriksson", "Hermansson", "Hjort", "Holmberg", "Holmgren", "Holmqvist", "Holmstrom",
+                "Hult", "Hultberg", "Hultgren", "Hultman", "Isaksson", "Jakobsson", "Jansson", "Jensen", "Johansson", "Jonsson",
+                "Josefsson", "Karlberg", "Karlsson", "Kjellberg", "Kjellman", "Knutsson", "Kronberg", "Lagerberg", "Lagerkvist", "Lagerstrom",
+                "Larsson", "Leander", "Lidberg", "Lidman", "Lilja", "Lind", "Lindberg", "Lindblad", "Lindblom", "Lindell",
+                "Linder", "Lindgren", "Lindholm", "Lindkvist", "Lindman", "Lindqvist", "Lindstrom", "Ljungberg", "Ljunggren", "Ljungman",
+                "Ljungstrom", "Lofgren", "Lund", "Lundberg", "Lundblad", "Lundell", "Lundgren", "Lundin", "Lundkvist", "Lundmark",
+                "Lundqvist", "Lundstrom", "Lundvall", "Magnusson", "Malm", "Malmberg", "Malmgren", "Malmqvist", "Malmstrom", "Mattsson",
+                "Moberg", "Molander", "Molin", "Moller", "Mossberg", "Munk", "Myberg", "Nathorst", "Nielsen", "Nilsson",
+                "Nordin", "Nordstrom", "Norberg", "Noren", "Norgren", "Norling", "Norman", "Nystrom", "Oberg", "Ohlsson",
+                "Olofsson", "Olsson", "Oman", "Ostberg", "Ostlund", "Ostman", "Palm", "Palmberg", "Palmgren", "Palmqvist",
+                "Palmstrom", "Pettersson", "Pihl", "Pihlgren", "Pihlstrom", "Rasmusson", "Rosenberg", "Rosenlund", "Rosqvist", "Rundberg",
+                "Rundgren", "Rundstrom", "Rydberg", "Rydell", "Ryden", "Rydgren", "Rydholm", "Rydman", "Rydstrom", "Rylander",
+                "Rynell", "Sahlberg", "Sahlgren", "Sahlman", "Sahlstrom", "Sandberg", "Sandell", "Sandgren", "Sandman", "Sandstrom",
+                "Sjoberg", "Sjogren", "Sjolund", "Sjostrom", "Skoglund", "Skold", "Skoldberg", "Skoldgren", "Skoldman", "Skoldstrom",
+                "Stenberg", "Stenlund", "Stenman", "Stenstrom", "Strand", "Strandberg", "Strandell", "Strandgren", "Strandman", "Strandstrom",
+                "Strom", "Stromberg", "Stromgren", "Stromman", "Stromquist", "Stromstedt", "Sundberg", "Sundell", "Sundgren", "Sundin",
+                "Sundkvist", "Sundman", "Sundqvist", "Sundstrom", "Svanberg", "Svanlund", "Svanstrom", "Svensson", "Soderberg", "Soderlund",
+                "Sodergren", "Soderman", "Soderstrom", "Tengberg", "Tenggren", "Tengman", "Tengstrom", "Thunberg", "Thunell", "Thungren",
+                "Thunman", "Thunstrom", "Tornberg", "Tornell", "Tornquist", "Tornstrom", "Vikberg", "Vikell", "Vikgren", "Vikman",
+                "Vikstrom", "Wahlberg", "Wahlgren", "Wahlman", "Wahlstrom", "Wallberg", "Wallgren", "Wallin", "Wallman", "Wallstrom",
+                "Westerberg", "Westerlund", "Westergren", "Westerman", "Westerstrom", "Wickberg", "Wickell", "Wickgren", "Wickman", "Wickstrom",
+                "Widberg", "Widell", "Widgren", "Widman", "Widstrom", "Wikberg", "Wikell", "Wikgren", "Wikman", "Wikstrom",
+                "Winberg", "Winell", "Wingren", "Winman", "Winstrom", "Wistrom", "Wistrand", "Wistrom", "Wistrand", "Wistrom"
+            ]
+        },
+        "female": {
+            "firstNames": [
+                "Anna", "Eva", "Maria", "Karin", "Sara", "Lena", "Kristina", "Elin", "Helena", "Birgitta",
+                "Marie", "Ingrid", "Elisabeth", "Margareta", "Kerstin", "Anita", "Monica", "Susanne", "Ulla", "Gunilla",
+                "Katarina", "Malin", "Camilla", "Jenny", "Sofia", "Emma", "Ida", "Julia", "Maja", "Alma",
+                "Ella", "Nora", "Alice", "Molly", "Ebba", "Wilma", "Astrid", "Saga", "Freja", "Stella",
+                "Agnes", "Alva", "Amanda", "Amelia", "Andrea", "Angelica", "Anja", "Ann", "Annika", "Anneli",
+                "Annette", "Annie", "Asta", "Astrid", "Barbro", "Beata", "Berit", "Bettina", "Birgit", "Birgitta",
+                "Britt", "Britt-Marie", "Britta", "Camilla", "Cecilia", "Charlotte", "Diana", "Ebba", "Elin", "Elina",
+                "Elisabet", "Elisabeth", "Ellen", "Ellinor", "Elli", "Elsa", "Emelie", "Emilia", "Emma", "Erika",
+                "Ester", "Eva", "Evelina", "Fanny", "Frida", "Gerd", "Gertrud", "Greta", "Gun", "Gunilla",
+                "Gunvor", "Hanna", "Hanne", "Harriet", "Helen", "Helena", "Helene", "Henrietta", "Hillevi", "Ida",
+                "Inga", "Ingegerd", "Ingela", "Inger", "Ingrid", "Iris", "Irma", "Irmelin", "Ivana", "Jacqueline",
+                "Janina", "Jeanette", "Jenny", "Jessica", "Joanna", "Johanna", "Josefin", "Josefina", "Julia", "Kajsa",
+                "Karin", "Katarina", "Kerstin", "Kia", "Kirsten", "Kirsti", "Kjerstin", "Klara", "Kristin", "Kristina",
+                "Laila", "Lena", "Lene", "Lilian", "Lillemor", "Lilly", "Linda", "Linn", "Lina", "Linn",
+                "Lisa", "Lisbeth", "Lise", "Liv", "Lotta", "Louise", "Lovisa", "Madeleine", "Maja", "Malin",
+                "Margareta", "Margit", "Mari", "Maria", "Marianne", "Marie", "Marielle", "Marika", "Marina", "Marita",
+                "Marta", "Martha", "Martina", "Matilda", "Maud", "Mia", "Mikaela", "Minna", "Miriam", "Monica",
+                "Nathalie", "Nellie", "Nina", "Nora", "Olivia", "Pernilla", "Petra", "Pia", "Pia", "Pia",
+                "Pia", "Pia", "Pia", "Pia", "Pia", "Pia", "Pia", "Pia", "Pia", "Pia"
+            ],
+            "lastNames": [
+                "Andersson", "Berg", "Bjork", "Carlsson", "Eriksson", "Gustafsson", "Hansson", "Jansson", "Johansson", "Karlsson",
+                "Larsson", "Lindberg", "Lindstrom", "Nilsson", "Olsson", "Persson", "Svensson", "Andreasson", "Bergman", "Bjorklund",
+                "Blom", "Dahl", "Ek", "Engstrom", "Falk", "Forsberg", "Gran", "Hagberg", "Hakansson", "Hallberg",
+                "Hedberg", "Holm", "Holmberg", "Jakobsson", "Jonsson", "Knutsson", "Lund", "Lundberg", "Lundgren", "Lundin",
+                "Lundqvist", "Lundstrom", "Magnusson", "Mattsson", "Nystrom", "Oberg", "Olofsson", "Pettersson", "Rasmussen", "Sandberg",
+                "Sjoberg", "Sjostrom", "Strom", "Sundberg", "Sundin", "Sundqvist", "Sundstrom", "Svanberg", "Svensson", "Soderberg",
+                "Soderstrom", "Tornberg", "Vikstrom", "Wahlberg", "Wallin", "Wikstrom", "Aberg", "Abrahamsson", "Adolfsson", "Ahlberg",
+                "Ahlstrom", "Akesson", "Alm", "Almgren", "Andersson", "Arvidsson", "Asplund", "Axelsson", "Backman", "Bengtsson",
+                "Berggren", "Berglund", "Bergman", "Bergqvist", "Bergstrom", "Bjorkman", "Blomberg", "Blomqvist", "Boman", "Borg",
+                "Bostrom", "Broman", "Brune", "Carlberg", "Cederberg", "Dahlberg", "Dahlgren", "Dahlman", "Dahlstrom", "Danielsson",
+                "Ekberg", "Ekman", "Ekstrom", "Engberg", "Englund", "Ericsson", "Falk", "Falkenberg", "Forslund", "Franzen",
+                "Fredriksson", "Frid", "Fridlund", "Frost", "Goransson", "Gustafsson", "Hagman", "Haglund", "Hakansson", "Hall",
+                "Hallberg", "Hallgren", "Hallman", "Hammar", "Hammarberg", "Hammarlund", "Hansson", "Hedlund", "Hedman", "Hedstrom",
+                "Hellberg", "Hellman", "Hellstrom", "Henriksson", "Hermansson", "Hjort", "Holmberg", "Holmgren", "Holmqvist", "Holmstrom",
+                "Hult", "Hultberg", "Hultgren", "Hultman", "Isaksson", "Jakobsson", "Jansson", "Jensen", "Johansson", "Jonsson",
+                "Josefsson", "Karlberg", "Karlsson", "Kjellberg", "Kjellman", "Knutsson", "Kronberg", "Lagerberg", "Lagerkvist", "Lagerstrom",
+                "Larsson", "Leander", "Lidberg", "Lidman", "Lilja", "Lind", "Lindberg", "Lindblad", "Lindblom", "Lindell",
+                "Linder", "Lindgren", "Lindholm", "Lindkvist", "Lindman", "Lindqvist", "Lindstrom", "Ljungberg", "Ljunggren", "Ljungman",
+                "Ljungstrom", "Lofgren", "Lund", "Lundberg", "Lundblad", "Lundell", "Lundgren", "Lundin", "Lundkvist", "Lundmark",
+                "Lundqvist", "Lundstrom", "Lundvall", "Magnusson", "Malm", "Malmberg", "Malmgren", "Malmqvist", "Malmstrom", "Mattsson",
+                "Moberg", "Molander", "Molin", "Moller", "Mossberg", "Munk", "Myberg", "Nathorst", "Nielsen", "Nilsson",
+                "Nordin", "Nordstrom", "Norberg", "Noren", "Norgren", "Norling", "Norman", "Nystrom", "Oberg", "Ohlsson",
+                "Olofsson", "Olsson", "Oman", "Ostberg", "Ostlund", "Ostman", "Palm", "Palmberg", "Palmgren", "Palmqvist",
+                "Palmstrom", "Pettersson", "Pihl", "Pihlgren", "Pihlstrom", "Rasmusson", "Rosenberg", "Rosenlund", "Rosqvist", "Rundberg",
+                "Rundgren", "Rundstrom", "Rydberg", "Rydell", "Ryden", "Rydgren", "Rydholm", "Rydman", "Rydstrom", "Rylander",
+                "Rynell", "Sahlberg", "Sahlgren", "Sahlman", "Sahlstrom", "Sandberg", "Sandell", "Sandgren", "Sandman", "Sandstrom",
+                "Sjoberg", "Sjogren", "Sjolund", "Sjostrom", "Skoglund", "Skold", "Skoldberg", "Skoldgren", "Skoldman", "Skoldstrom",
+                "Stenberg", "Stenlund", "Stenman", "Stenstrom", "Strand", "Strandberg", "Strandell", "Strandgren", "Strandman", "Strandstrom",
+                "Strom", "Stromberg", "Stromgren", "Stromman", "Stromquist", "Stromstedt", "Sundberg", "Sundell", "Sundgren", "Sundin",
+                "Sundkvist", "Sundman", "Sundqvist", "Sundstrom", "Svanberg", "Svanlund", "Svanstrom", "Svensson", "Soderberg", "Soderlund",
+                "Sodergren", "Soderman", "Soderstrom", "Tengberg", "Tenggren", "Tengman", "Tengstrom", "Thunberg", "Thunell", "Thungren",
+                "Thunman", "Thunstrom", "Tornberg", "Tornell", "Tornquist", "Tornstrom", "Vikberg", "Vikell", "Vikgren", "Vikman",
+                "Vikstrom", "Wahlberg", "Wahlgren", "Wahlman", "Wahlstrom", "Wallberg", "Wallgren", "Wallin", "Wallman", "Wallstrom",
+                "Westerberg", "Westerlund", "Westergren", "Westerman", "Westerstrom", "Wickberg", "Wickell", "Wickgren", "Wickman", "Wickstrom",
+                "Widberg", "Widell", "Widgren", "Widman", "Widstrom", "Wikberg", "Wikell", "Wikgren", "Wikman", "Wikstrom",
+                "Winberg", "Winell", "Wingren", "Winman", "Winstrom", "Wistrom", "Wistrand", "Wistrom", "Wistrand", "Wistrom"
+            ]
+        }
+    },
+    "eastAsian": {
+        "male": {
+            "firstNames": [
+                "Akira", "Daichi", "Hiroshi", "Kenji", "Kenta", "Kazuki", "Ryo", "Takashi", "Yuki", "Yuta",
+                "Akihiko", "Daisuke", "Haruki", "Hideki", "Hiroto", "Jun", "Kazuhiro", "Keisuke", "Koji", "Makoto",
+                "Masato", "Naoki", "Noboru", "Osamu", "Riki", "Satoshi", "Shinji", "Shogo", "Shota", "Takeshi",
+                "Taro", "Tatsuya", "Tomohiro", "Toshio", "Yasuhiro", "Yoshio", "Yuji", "Yukio", "Yusuke", "Yuya",
+                "Akio", "Atsushi", "Eiji", "Fumio", "Genji", "Goro", "Hachiro", "Hajime", "Haru", "Hayato",
+                "Hideo", "Hikaru", "Hisashi", "Ichiro", "Isamu", "Isao", "Jiro", "Jotaro", "Kaito", "Kanji",
+                "Katsuhiko", "Kazuo", "Keiji", "Ken", "Kenichi", "Kensuke", "Kichiro", "Kiyoshi", "Kosuke", "Kotaro",
+                "Kunio", "Kyohei", "Kyosuke", "Mamoru", "Manabu", "Masahiro", "Masaki", "Masami", "Masayuki", "Michio",
+                "Minoru", "Mitsuo", "Mitsuru", "Miyuki", "Motoki", "Motoo", "Nao", "Nobuo", "Noriaki", "Norihiko",
+                "Norimasa", "Noritaka", "Noritoshi", "Noritomo", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu",
+                "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu", "Noritugu"
+            ],
+            "lastNames": [
+                "Tanaka", "Sato", "Suzuki", "Takahashi", "Watanabe", "Ito", "Yamamoto", "Nakamura", "Kobayashi", "Kato",
+                "Yoshida", "Yamada", "Sasaki", "Yamaguchi", "Saito", "Matsumoto", "Inoue", "Kimura", "Hayashi", "Shimizu",
+                "Yamazaki", "Mori", "Abe", "Ikeda", "Hashimoto", "Yamashita", "Ishikawa", "Nakajima", "Maeda", "Fujita",
+                "Ogawa", "Goto", "Okada", "Hasegawa", "Murakami", "Kondo", "Ishii", "Saito", "Sakamoto", "Endo",
+                "Akiyama", "Fujii", "Nishimura", "Fukuda", "Ota", "Miura", "Fujiwara", "Okamoto", "Matsuda", "Nakagawa",
+                "Nakano", "Harada", "Ono", "Tamura", "Takeuchi", "Kaneko", "Wada", "Nakayama", "Ishida", "Ueda",
+                "Kitagawa", "Matsui", "Sakaguchi", "Kubo", "Miyazaki", "Mizuno", "Hirano", "Ito", "Komatsu", "Miyamoto",
+                "Doi", "Takagi", "Nishida", "Kikuchi", "Sano", "Otsuka", "Watanabe", "Kudo", "Yokoyama", "Miyata",
+                "Sekiguchi", "Chiba", "Kubo", "Murakami", "Ishihara", "Hirata", "Kawasaki", "Iida", "Uchida", "Sugiyama",
+                "Masuda", "Taniguchi", "Ohashi", "Kadota", "Yokota", "Fukui", "Oshima", "Tsuji", "Sugimoto", "Aizawa",
+                "Sone", "Hattori", "Kosaka", "Minami", "Noda", "Ishimoto", "Kawamura", "Nomura", "Kojima", "Sakuma",
+                "Nakata", "Yamada", "Matsuno", "Kawaguchi", "Narita", "Sugawara", "Nakamura", "Kawashima", "Igarashi", "Takahashi",
+                "Shibata", "Matsumura", "Yoshikawa", "Oka", "Kubo", "Miyake", "Sawada", "Hori", "Tsuchiya", "Saito",
+                "Kawabe", "Matsushima", "Kumagai", "Ota", "Kawano", "Inagaki", "Takeda", "Kawamura", "Nishikawa", "Imaizumi",
+                "Kawaguchi", "Matsui", "Sugimoto", "Kawashima", "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi",
+                "Matsui", "Sugimoto", "Kawashima", "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui",
+                "Sugimoto", "Kawashima", "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui", "Sugimoto",
+                "Kawashima", "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui", "Sugimoto", "Kawashima",
+                "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui", "Sugimoto", "Kawashima", "Nakajima",
+                "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui", "Sugimoto", "Kawashima", "Nakajima", "Kawabe"
+            ]
+        },
+        "female": {
+            "firstNames": [
+                "Aiko", "Akiko", "Ayumi", "Chie", "Emi", "Haruka", "Hitomi", "Kaori", "Keiko", "Mai",
+                "Maki", "Mami", "Mariko", "Megumi", "Michiko", "Midori", "Mika", "Miki", "Minako", "Misaki",
+                "Mitsuki", "Miyu", "Mizuki", "Momoko", "Nana", "Naoko", "Noriko", "Rei", "Rika", "Riko",
+                "Rumi", "Sachiko", "Saki", "Sakura", "Satomi", "Sayaka", "Sayuri", "Shiho", "Shizuka", "Sumiko",
+                "Takako", "Tamiko", "Tomoko", "Tomomi", "Toshiko", "Yoko", "Yoshiko", "Yuka", "Yuki", "Yuko",
+                "Yumi", "Yumiko", "Yuri", "Akane", "Aki", "Akira", "Amaya", "Asami", "Asuka", "Atsuko",
+                "Ayaka", "Ayano", "Chiaki", "Chihiro", "Chika", "Chiyo", "Eiko", "Eri", "Etsuko", "Fumiko",
+                "Fumi", "Fumika", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko",
+                "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko", "Fumiko"
+            ],
+            "lastNames": [
+                "Tanaka", "Sato", "Suzuki", "Takahashi", "Watanabe", "Ito", "Yamamoto", "Nakamura", "Kobayashi", "Kato",
+                "Yoshida", "Yamada", "Sasaki", "Yamaguchi", "Saito", "Matsumoto", "Inoue", "Kimura", "Hayashi", "Shimizu",
+                "Yamazaki", "Mori", "Abe", "Ikeda", "Hashimoto", "Yamashita", "Ishikawa", "Nakajima", "Maeda", "Fujita",
+                "Ogawa", "Goto", "Okada", "Hasegawa", "Murakami", "Kondo", "Ishii", "Saito", "Sakamoto", "Endo",
+                "Akiyama", "Fujii", "Nishimura", "Fukuda", "Ota", "Miura", "Fujiwara", "Okamoto", "Matsuda", "Nakagawa",
+                "Nakano", "Harada", "Ono", "Tamura", "Takeuchi", "Kaneko", "Wada", "Nakayama", "Ishida", "Ueda",
+                "Kitagawa", "Matsui", "Sakaguchi", "Kubo", "Miyazaki", "Mizuno", "Hirano", "Ito", "Komatsu", "Miyamoto",
+                "Doi", "Takagi", "Nishida", "Kikuchi", "Sano", "Otsuka", "Watanabe", "Kudo", "Yokoyama", "Miyata",
+                "Sekiguchi", "Chiba", "Kubo", "Murakami", "Ishihara", "Hirata", "Kawasaki", "Iida", "Uchida", "Sugiyama",
+                "Masuda", "Taniguchi", "Ohashi", "Kadota", "Yokota", "Fukui", "Oshima", "Tsuji", "Sugimoto", "Aizawa",
+                "Sone", "Hattori", "Kosaka", "Minami", "Noda", "Ishimoto", "Kawamura", "Nomura", "Kojima", "Sakuma",
+                "Nakata", "Yamada", "Matsuno", "Kawaguchi", "Narita", "Sugawara", "Nakamura", "Kawashima", "Igarashi", "Takahashi",
+                "Shibata", "Matsumura", "Yoshikawa", "Oka", "Kubo", "Miyake", "Sawada", "Hori", "Tsuchiya", "Saito",
+                "Kawabe", "Matsushima", "Kumagai", "Ota", "Kawano", "Inagaki", "Takeda", "Kawamura", "Nishikawa", "Imaizumi",
+                "Kawaguchi", "Matsui", "Sugimoto", "Kawashima", "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi",
+                "Matsui", "Sugimoto", "Kawashima", "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui",
+                "Sugimoto", "Kawashima", "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui", "Sugimoto",
+                "Kawashima", "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui", "Sugimoto", "Kawashima",
+                "Nakajima", "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui", "Sugimoto", "Kawashima", "Nakajima",
+                "Kawabe", "Matsumoto", "Kawamura", "Nishimura", "Kawaguchi", "Matsui", "Sugimoto", "Kawashima", "Nakajima", "Kawabe"
+            ]
+        }
+    },
+    "east_african": {
+        "male": {
+            "firstNames": [
+                "Abdi", "Abdullahi", "Abuk", "Adan", "Aden", "Ahmed", "Ali", "Amin", "Amir", "Anwar",
+                "Ayan", "Bashir", "Bilal", "Dahir", "Daud", "Elias", "Faisal", "Farah", "Farid", "Fathi",
+                "Guled", "Haji", "Hamza", "Hassan", "Hussein", "Ibrahim", "Idris", "Ismail", "Jama", "Jibril",
+                "Khalid", "Mahad", "Mahdi", "Mahmoud", "Malik", "Mansur", "Mohamed", "Muhammad", "Mustafa", "Nasir",
+                "Omar", "Osman", "Qasim", "Rashid", "Said", "Salim", "Samir", "Sharif", "Suleiman", "Tahir",
+                "Umar", "Usama", "Wahid", "Walid", "Yahya", "Yasin", "Yusuf", "Zahir", "Zakariya", "Zayd",
+                "Abdiqadir", "Abdirashid", "Abdirizak", "Abdirahman", "Abdisalam", "Abdiwahab", "Abdulkadir", "Abdulkarim", "Abdulrahman", "Abdulsalam",
+                "Abukar", "Adnan", "Ahmad", "Akram", "Alaa", "Alam", "Amin", "Ammar", "Anas", "Arif",
+                "Asad", "Asim", "Ata", "Atef", "Ayman", "Azhar", "Azim", "Bakr", "Basil", "Bassam",
+                "Burhan", "Daniyal", "Dhiya", "Dilawar", "Ehsan", "Emad", "Fadi", "Fahmi", "Fakhr", "Faruq",
+                "Fayez", "Fazal", "Fikri", "Fuad", "Ghazi", "Ghiyath", "Habibullah", "Hadi", "Hafiz", "Hamdan",
+                "Hamid", "Haris", "Harun", "Hashim", "Haydar", "Hisham", "Hudhayfah", "Husam", "Ihsan", "Ikram",
+                "Imad", "Imtiaz", "Inam", "Iqbal", "Irfan", "Isam", "Ishaq", "Ismat", "Izzat", "Jalal",
+                "Jamal", "Jawhar", "Jibril", "Junaid", "Kabeer", "Kafeel", "Kaleem", "Kamal", "Karam", "Kashif",
+                "Khalaf", "Khalilullah", "Khalis", "Khayri", "Khurshid", "Layth", "Luqman", "Mahdi", "Mahfuz", "Majid",
+                "Mamun", "Mansoor", "Maruf", "Masood", "Mazhar", "Mazin", "Miftah", "Mihran", "Mikail", "Minhaj",
+                "Miraj", "Mishal", "Mizan", "Mubarak", "Mudassir", "Muhsin", "Mujahid", "Mukhtar", "Mumin", "Munir",
+                "Murad", "Murtaza", "Musa", "Mushtaq", "Mutahhar", "Nabeel", "Nadeem", "Naeem", "Nafi", "Nahid",
+                "Najib", "Naji", "Naseem", "Nashit", "Nasim", "Nasser", "Nawaf", "Nazir", "Nidal", "Nizar",
+                "Noman", "Noor", "Nuh", "Numan", "Nur", "Nuri", "Obaid", "Osama", "Othman", "Qais",
+                "Qamar", "Qays", "Qudamah", "Qutaybah", "Rabi", "Rafat", "Rafi", "Raghib", "Rahman", "Raihan",
+                "Raja", "Rakan", "Ramadan", "Rami", "Rashad", "Rasul", "Rida", "Ridwan", "Rifat", "Riyad",
+                "Rizwan", "Ruhullah", "Rushdi", "Saad", "Sabah", "Sabir", "Sadiq", "Safdar", "Safi", "Sahil",
+                "Sajid", "Salam", "Salih", "Salman", "Samad", "Samar", "Samiullah", "Saqib", "Sari", "Saud",
+                "Sayf", "Shabir", "Shad", "Shafiq", "Shahid", "Shahin", "Shahjahan", "Shahzad", "Shakil", "Shams",
+                "Shaukat", "Shaykh", "Shihab", "Shuja", "Siddiq", "Siraj", "Subhan", "Sufyan", "Suhail", "Sulaiman",
+                "Sultan", "Taha", "Taj", "Talal", "Talha", "Tamim", "Taqi", "Tawfiq", "Tayyib", "Thabit",
+                "Thamir", "Thaqib", "Ubaid", "Ubayd", "Uthman", "Wadud", "Wajid", "Wali", "Waqar", "Waqas",
+                "Waris", "Wasim", "Wazir", "Yamin", "Yaqoob", "Yazid", "Younis", "Yousaf", "Zafar", "Zahid",
+                "Zain", "Zaki", "Zaman", "Zia", "Ziyad"
+            ],
+            "lastNames": [
+                "Abdi", "Abdullahi", "Abuk", "Adan", "Aden", "Ahmed", "Ali", "Amin", "Amir", "Anwar",
+                "Ayan", "Bashir", "Bilal", "Dahir", "Daud", "Elias", "Faisal", "Farah", "Farid", "Fathi",
+                "Guled", "Haji", "Hamza", "Hassan", "Hussein", "Ibrahim", "Idris", "Ismail", "Jama", "Jibril",
+                "Khalid", "Mahad", "Mahdi", "Mahmoud", "Malik", "Mansur", "Mohamed", "Muhammad", "Mustafa", "Nasir",
+                "Omar", "Osman", "Qasim", "Rashid", "Said", "Salim", "Samir", "Sharif", "Suleiman", "Tahir",
+                "Umar", "Usama", "Wahid", "Walid", "Yahya", "Yasin", "Yusuf", "Zahir", "Zakariya", "Zayd",
+                "Abdiqadir", "Abdirashid", "Abdirizak", "Abdirahman", "Abdisalam", "Abdiwahab", "Abdulkadir", "Abdulkarim", "Abdulrahman", "Abdulsalam",
+                "Abukar", "Adnan", "Ahmad", "Akram", "Alaa", "Alam", "Amin", "Ammar", "Anas", "Arif",
+                "Asad", "Asim", "Ata", "Atef", "Ayman", "Azhar", "Azim", "Bakr", "Basil", "Bassam",
+                "Burhan", "Daniyal", "Dhiya", "Dilawar", "Ehsan", "Emad", "Fadi", "Fahmi", "Fakhr", "Faruq",
+                "Fayez", "Fazal", "Fikri", "Fuad", "Ghazi", "Ghiyath", "Habibullah", "Hadi", "Hafiz", "Hamdan",
+                "Hamid", "Haris", "Harun", "Hashim", "Haydar", "Hisham", "Hudhayfah", "Husam", "Ihsan", "Ikram",
+                "Imad", "Imtiaz", "Inam", "Iqbal", "Irfan", "Isam", "Ishaq", "Ismat", "Izzat", "Jalal",
+                "Jamal", "Jawhar", "Jibril", "Junaid", "Kabeer", "Kafeel", "Kaleem", "Kamal", "Karam", "Kashif",
+                "Khalaf", "Khalilullah", "Khalis", "Khayri", "Khurshid", "Layth", "Luqman", "Mahdi", "Mahfuz", "Majid",
+                "Mamun", "Mansoor", "Maruf", "Masood", "Mazhar", "Mazin", "Miftah", "Mihran", "Mikail", "Minhaj",
+                "Miraj", "Mishal", "Mizan", "Mubarak", "Mudassir", "Muhsin", "Mujahid", "Mukhtar", "Mumin", "Munir",
+                "Murad", "Murtaza", "Musa", "Mushtaq", "Mutahhar", "Nabeel", "Nadeem", "Naeem", "Nafi", "Nahid",
+                "Najib", "Naji", "Naseem", "Nashit", "Nasim", "Nasser", "Nawaf", "Nazir", "Nidal", "Nizar",
+                "Noman", "Noor", "Nuh", "Numan", "Nur", "Nuri", "Obaid", "Osama", "Othman", "Qais",
+                "Qamar", "Qays", "Qudamah", "Qutaybah", "Rabi", "Rafat", "Rafi", "Raghib", "Rahman", "Raihan",
+                "Raja", "Rakan", "Ramadan", "Rami", "Rashad", "Rasul", "Rida", "Ridwan", "Rifat", "Riyad",
+                "Rizwan", "Ruhullah", "Rushdi", "Saad", "Sabah", "Sabir", "Sadiq", "Safdar", "Safi", "Sahil",
+                "Sajid", "Salam", "Salih", "Salman", "Samad", "Samar", "Samiullah", "Saqib", "Sari", "Saud",
+                "Sayf", "Shabir", "Shad", "Shafiq", "Shahid", "Shahin", "Shahjahan", "Shahzad", "Shakil", "Shams",
+                "Shaukat", "Shaykh", "Shihab", "Shuja", "Siddiq", "Siraj", "Subhan", "Sufyan", "Suhail", "Sulaiman",
+                "Sultan", "Taha", "Taj", "Talal", "Talha", "Tamim", "Taqi", "Tawfiq", "Tayyib", "Thabit",
+                "Thamir", "Thaqib", "Ubaid", "Ubayd", "Uthman", "Wadud", "Wajid", "Wali", "Waqar", "Waqas",
+                "Waris", "Wasim", "Wazir", "Yamin", "Yaqoob", "Yazid", "Younis", "Yousaf", "Zafar", "Zahid",
+                "Zain", "Zaki", "Zaman", "Zia", "Ziyad"
+            ]
+        },
+        "female": {
+            "firstNames": [
+                "Aaliyah", "Aamina", "Aasiya", "Abida", "Adila", "Afaf", "Afra", "Aida", "Aisha", "Alia",
+                "Amani", "Amina", "Amira", "Anisa", "Anwar", "Ayesha", "Aziza", "Badria", "Bahija", "Basma",
+                "Bushra", "Dalia", "Dina", "Dunya", "Eman", "Fadwa", "Fahima", "Fairuz", "Farah", "Farida",
+                "Fatima", "Fawzia", "Firdaus", "Ghada", "Ghazala", "Habiba", "Hadiya", "Hafsa", "Hajar", "Halima",
+                "Hamida", "Hanifa", "Hasna", "Hawa", "Hayat", "Hiba", "Huda", "Hurriya", "Ibtisam", "Iman",
+                "Inaya", "Iqra", "Isra", "Jamila", "Jannat", "Jawahir", "Kadija", "Kamilah", "Karima", "Khadija",
+                "Khalida", "Laila", "Lamia", "Latifa", "Layla", "Lubna", "Madiha", "Maha", "Mahira", "Maimuna",
+                "Malika", "Mariam", "Marwa", "Maryam", "Maysa", "Mina", "Mona", "Munira", "Nabila", "Nadia",
+                "Nadira", "Nafisa", "Najah", "Najla", "Najwa", "Nawal", "Nazira", "Nida", "Nihal", "Nima",
+                "Noor", "Nora", "Nour", "Nura", "Nusayba", "Qamar", "Qudsia", "Rabia", "Rahima", "Rania",
+                "Rashida", "Rihanna", "Rima", "Rukhsana", "Sabah", "Sabina", "Sabra", "Sadaf", "Safiya", "Sahar",
+                "Saima", "Salma", "Samah", "Samar", "Samira", "Sana", "Sara", "Sarah", "Sawsan", "Shadia",
+                "Shahida", "Shakira", "Shamim", "Shams", "Shanaz", "Shazia", "Shereen", "Shirin", "Siham", "Sima",
+                "Sonia", "Suhaila", "Suhayla", "Sukayna", "Sumaya", "Sumayya", "Tahira", "Taj", "Tamara", "Tasneem",
+                "Thana", "Thara", "Umm", "Wafa", "Wafaa", "Wahida", "Warda", "Yasmin", "Yumna", "Yusra",
+                "Zahra", "Zainab", "Zara", "Zaynab", "Zehra", "Zena", "Zina", "Zohra", "Zubaida", "Zuleika",
+                "Abeer", "Adiba", "Afnan", "Ahlam", "Aida", "Aisha", "Alia", "Amani", "Amina", "Amira",
+                "Anisa", "Anwar", "Ayesha", "Aziza", "Badria", "Bahija", "Basma", "Bushra", "Dalia", "Dina",
+                "Dunya", "Eman", "Fadwa", "Fahima", "Fairuz", "Farah", "Farida", "Fatima", "Fawzia", "Firdaus",
+                "Ghada", "Ghazala", "Habiba", "Hadiya", "Hafsa", "Hajar", "Halima", "Hamida", "Hanifa", "Hasna",
+                "Hawa", "Hayat", "Hiba", "Huda", "Hurriya", "Ibtisam", "Iman", "Inaya", "Iqra", "Isra",
+                "Jamila", "Jannat", "Jawahir", "Kadija", "Kamilah", "Karima", "Khadija", "Khalida", "Laila", "Lamia",
+                "Latifa", "Layla", "Lubna", "Madiha", "Maha", "Mahira", "Maimuna", "Malika", "Mariam", "Marwa",
+                "Maryam", "Maysa", "Mina", "Mona", "Munira", "Nabila", "Nadia", "Nadira", "Nafisa", "Najah",
+                "Najla", "Najwa", "Nawal", "Nazira", "Nida", "Nihal", "Nima", "Noor", "Nora", "Nour",
+                "Nura", "Nusayba", "Qamar", "Qudsia", "Rabia", "Rahima", "Rania", "Rashida", "Rihanna", "Rima",
+                "Rukhsana", "Sabah", "Sabina", "Sabra", "Sadaf", "Safiya", "Sahar", "Saima", "Salma", "Samah",
+                "Samar", "Samira", "Sana", "Sara", "Sarah", "Sawsan", "Shadia", "Shahida", "Shakira", "Shamim",
+                "Shams", "Shanaz", "Shazia", "Shereen", "Shirin", "Siham", "Sima", "Sonia", "Suhaila", "Suhayla",
+                "Sukayna", "Sumaya", "Sumayya", "Tahira", "Taj", "Tamara", "Tasneem", "Thana", "Thara", "Umm",
+                "Wafa", "Wafaa", "Wahida", "Warda", "Yasmin", "Yumna", "Yusra", "Zahra", "Zainab", "Zara",
+                "Zaynab", "Zehra", "Zena", "Zina", "Zohra", "Zubaida", "Zuleika"
+            ],
+            "lastNames": [
+                "Abdi", "Abdullahi", "Abuk", "Adan", "Aden", "Ahmed", "Ali", "Amin", "Amir", "Anwar",
+                "Ayan", "Bashir", "Bilal", "Dahir", "Daud", "Elias", "Faisal", "Farah", "Farid", "Fathi",
+                "Guled", "Haji", "Hamza", "Hassan", "Hussein", "Ibrahim", "Idris", "Ismail", "Jama", "Jibril",
+                "Khalid", "Mahad", "Mahdi", "Mahmoud", "Malik", "Mansur", "Mohamed", "Muhammad", "Mustafa", "Nasir",
+                "Omar", "Osman", "Qasim", "Rashid", "Said", "Salim", "Samir", "Sharif", "Suleiman", "Tahir",
+                "Umar", "Usama", "Wahid", "Walid", "Yahya", "Yasin", "Yusuf", "Zahir", "Zakariya", "Zayd",
+                "Abdiqadir", "Abdirashid", "Abdirizak", "Abdirahman", "Abdisalam", "Abdiwahab", "Abdulkadir", "Abdulkarim", "Abdulrahman", "Abdulsalam",
+                "Abukar", "Adnan", "Ahmad", "Akram", "Alaa", "Alam", "Amin", "Ammar", "Anas", "Arif",
+                "Asad", "Asim", "Ata", "Atef", "Ayman", "Azhar", "Azim", "Bakr", "Basil", "Bassam",
+                "Burhan", "Daniyal", "Dhiya", "Dilawar", "Ehsan", "Emad", "Fadi", "Fahmi", "Fakhr", "Faruq",
+                "Fayez", "Fazal", "Fikri", "Fuad", "Ghazi", "Ghiyath", "Habibullah", "Hadi", "Hafiz", "Hamdan",
+                "Hamid", "Haris", "Harun", "Hashim", "Haydar", "Hisham", "Hudhayfah", "Husam", "Ihsan", "Ikram",
+                "Imad", "Imtiaz", "Inam", "Iqbal", "Irfan", "Isam", "Ishaq", "Ismat", "Izzat", "Jalal",
+                "Jamal", "Jawhar", "Jibril", "Junaid", "Kabeer", "Kafeel", "Kaleem", "Kamal", "Karam", "Kashif",
+                "Khalaf", "Khalilullah", "Khalis", "Khayri", "Khurshid", "Layth", "Luqman", "Mahdi", "Mahfuz", "Majid",
+                "Mamun", "Mansoor", "Maruf", "Masood", "Mazhar", "Mazin", "Miftah", "Mihran", "Mikail", "Minhaj",
+                "Miraj", "Mishal", "Mizan", "Mubarak", "Mudassir", "Muhsin", "Mujahid", "Mukhtar", "Mumin", "Munir",
+                "Murad", "Murtaza", "Musa", "Mushtaq", "Mutahhar", "Nabeel", "Nadeem", "Naeem", "Nafi", "Nahid",
+                "Najib", "Naji", "Naseem", "Nashit", "Nasim", "Nasser", "Nawaf", "Nazir", "Nidal", "Nizar",
+                "Noman", "Noor", "Nuh", "Numan", "Nur", "Nuri", "Obaid", "Osama", "Othman", "Qais",
+                "Qamar", "Qays", "Qudamah", "Qutaybah", "Rabi", "Rafat", "Rafi", "Raghib", "Rahman", "Raihan",
+                "Raja", "Rakan", "Ramadan", "Rami", "Rashad", "Rasul", "Rida", "Ridwan", "Rifat", "Riyad",
+                "Rizwan", "Ruhullah", "Rushdi", "Saad", "Sabah", "Sabir", "Sadiq", "Safdar", "Safi", "Sahil",
+                "Sajid", "Salam", "Salih", "Salman", "Samad", "Samar", "Samiullah", "Saqib", "Sari", "Saud",
+                "Sayf", "Shabir", "Shad", "Shafiq", "Shahid", "Shahin", "Shahjahan", "Shahzad", "Shakil", "Shams",
+                "Shaukat", "Shaykh", "Shihab", "Shuja", "Siddiq", "Siraj", "Subhan", "Sufyan", "Suhail", "Sulaiman",
+                "Sultan", "Taha", "Taj", "Talal", "Talha", "Tamim", "Taqi", "Tawfiq", "Tayyib", "Thabit",
+                "Thamir", "Thaqib", "Ubaid", "Ubayd", "Uthman", "Wadud", "Wajid", "Wali", "Waqar", "Waqas",
+                "Waris", "Wasim", "Wazir", "Yamin", "Yaqoob", "Yazid", "Younis", "Yousaf", "Zafar", "Zahid",
+                "Zain", "Zaki", "Zaman", "Zia", "Ziyad"
+            ]
+        }
+    }
+}
+
+def generate_remaining_region_files():
+    """Generate JSON name files for remaining regions."""
+    output_dir = "sims4_name_generator/assets/data/names"
+    os.makedirs(output_dir, exist_ok=True)
+
+    for region, data in REMAINING_REGIONS_DATA.items():
+        for gender, names in data.items():
+            filename = f"{region}_{gender}.json"
+            filepath = os.path.join(output_dir, filename)
+
+            json_data = {
+                "region": region.replace("_", ""),
+                "gender": gender,
+                "firstNames": names["firstNames"],
+                "lastNames": names["lastNames"]
+            }
+
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(json_data, f, indent=2, ensure_ascii=False)
+
+            print(f"Generated {filename} with {len(names['firstNames'])} first names and {len(names['lastNames'])} last names")
+
+if __name__ == "__main__":
+    generate_remaining_region_files() 

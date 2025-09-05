@@ -1,0 +1,38 @@
+{
+  "region": "english",
+  "gender": "male",
+  "firstNames": [
+    "Alexander",
+    "Benjamin",
+    "Christopher",
+    "Daniel",
+    "Edward",
+    "Frederick",
+    "George",
+    "Henry",
+    "Isaac",
+    "James",
+    "Kenneth",
+    "Lawrence",
+    "Michael",
+    "Nicholas",
+    "Oliver"
+  ],
+  "lastNames": [
+    "Anderson",
+    "Brown",
+    "Clark",
+    "Davis",
+    "Evans",
+    "Fisher",
+    "Green",
+    "Harris",
+    "Johnson",
+    "King",
+    "Lewis",
+    "Miller",
+    "Nelson",
+    "Parker",
+    "Roberts"
+  ]
+}

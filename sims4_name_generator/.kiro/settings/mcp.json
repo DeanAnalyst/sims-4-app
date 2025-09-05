@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "shadcn-ui-server": {
+      "command": "npx",
+      "args": [
+        "@heilgar/shadcn-ui-mcp-server"
+      ],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "dart": {
+      "command": "dart",
+      "args": [
+        "mcp-server",
+        "--force-roots-fallback"
+      ],
+      "disabled": false,
+      "autoApprove": [
+        "pub",
+        "add_roots",
+        "run_tests"
+      ]
+    },
+    "js-mcp": {
+      "command": "npx",
+      "args": [
+        "js-mcp"
+      ],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "firecrawl-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-2f87df736657452fb8ec486ac5f1d105"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "octagon": {
+      "url": "https://mcp.octagonagents.com/mcp"
+    }
+  }
+}

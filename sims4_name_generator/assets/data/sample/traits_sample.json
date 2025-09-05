@@ -1,0 +1,124 @@
+{
+  "traits": [
+    {
+      "id": "active",
+      "name": "Active",
+      "description": "These Sims tend to be Energized, can Pump Up other Sims, and may become upset if they don't exercise for a period of time.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": ["lazy"]
+    },
+    {
+      "id": "ambitious",
+      "name": "Ambitious",
+      "description": "These Sims gain powerful Moodlets from career success, gain negative Moodlets from career failure, and may become Tense if not promoted.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "cheerful",
+      "name": "Cheerful",
+      "description": "These Sims tend to be Happier than other Sims.",
+      "category": "emotional",
+      "pack": "base_game",
+      "conflictingTraits": ["gloomy"]
+    },
+    {
+      "id": "creative",
+      "name": "Creative",
+      "description": "These Sims tend to be Inspired, can Share Creative Ideas with other Sims, and may become upset if they're not creative for a period of time.",
+      "category": "hobby",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "evil",
+      "name": "Evil",
+      "description": "These Sims become Happy around Sims with negative Moodlets, can be Mean to other Sims, and become Angry when witnessing altruistic behavior.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": ["good"]
+    },
+    {
+      "id": "family_oriented",
+      "name": "Family-Oriented",
+      "description": "These Sims become Happy and build stronger relationships around family members. They can Discuss Family at any time.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": ["hates_children"]
+    },
+    {
+      "id": "genius",
+      "name": "Genius",
+      "description": "These Sims tend to be Focused, can Share Big Ideas with other Sims, and may become upset if they're not intellectually stimulated.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "gloomy",
+      "name": "Gloomy",
+      "description": "These Sims tend to be Sad, can Discuss Fears with other Sims, and while sad, gain a boost to their Creative Skill.",
+      "category": "emotional",
+      "pack": "base_game",
+      "conflictingTraits": ["cheerful"]
+    },
+    {
+      "id": "good",
+      "name": "Good",
+      "description": "These Sims become Happy when doing good deeds and become Sad when being mean or around Sims with negative Traits.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": ["evil", "mean"]
+    },
+    {
+      "id": "hates_children",
+      "name": "Hates Children",
+      "description": "These Sims become Tense around children and become Angry when children are loud.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": ["family_oriented"]
+    },
+    {
+      "id": "lazy",
+      "name": "Lazy",
+      "description": "These Sims are harder to motivate and tend to sit around more than other Sims.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": ["active"]
+    },
+    {
+      "id": "mean",
+      "name": "Mean",
+      "description": "These Sims become Happy when being Mean or Mischievous to other Sims and become Sad when around positive Moodlets.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": ["good"]
+    },
+    {
+      "id": "music_lover",
+      "name": "Music Lover",
+      "description": "These Sims gain powerful Moodlets from listening to music and can Discuss Favorite Music with other Sims.",
+      "category": "hobby",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "outgoing",
+      "name": "Outgoing",
+      "description": "These Sims become Happy when around other Sims and become Sad when alone for too long.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": ["loner"]
+    },
+    {
+      "id": "loner",
+      "name": "Loner",
+      "description": "These Sims become Tense around strangers, become Embarrassed more often in social situations, but gain powerful Moodlets when alone.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": ["outgoing"]
+    }
+  ]
+}

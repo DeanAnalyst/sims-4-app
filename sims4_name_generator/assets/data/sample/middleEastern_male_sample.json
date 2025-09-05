@@ -1,0 +1,38 @@
+{
+  "region": "middleEastern",
+  "gender": "male",
+  "firstNames": [
+    "Ahmed",
+    "Ali",
+    "Hassan",
+    "Ibrahim",
+    "Khalid",
+    "Mohammed",
+    "Omar",
+    "Rashid",
+    "Samir",
+    "Tariq",
+    "Yusuf",
+    "Zaid",
+    "Farid",
+    "Nasser",
+    "Karim"
+  ],
+  "lastNames": [
+    "Al-Ahmad",
+    "Al-Hassan",
+    "Al-Ibrahim",
+    "Al-Khalil",
+    "Al-Mahmoud",
+    "Al-Rashid",
+    "Al-Saeed",
+    "Al-Tariq",
+    "Al-Yusuf",
+    "Al-Zaid",
+    "Farouk",
+    "Mansour",
+    "Nassar",
+    "Qasemi",
+    "Saleh"
+  ]
+}

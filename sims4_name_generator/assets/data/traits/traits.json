@@ -1,0 +1,889 @@
+{
+  "traits": [
+    {
+      "id": "active",
+      "name": "Active",
+      "description": "These Sims tend to be Energized, can Pump Up other Sims, and may become upset if they don't exercise for a period of time.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "lazy"
+      ]
+    },
+    {
+      "id": "ambitious",
+      "name": "Ambitious",
+      "description": "These Sims gain powerful Moodlets from career success, gain negative Moodlets from career failure, and may become Tense if not promoted.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "art_lover",
+      "name": "Art Lover",
+      "description": "These Sims gain powerful Moodlets from viewing works of art and can Discuss Art in an animated way.",
+      "category": "hobby",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "bookworm",
+      "name": "Bookworm",
+      "description": "These Sims gain powerful Moodlets from reading books and can Share Favorite Book with other Sims.",
+      "category": "hobby",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "cheerful",
+      "name": "Cheerful",
+      "description": "These Sims tend to be Happier than other Sims.",
+      "category": "emotional",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "gloomy"
+      ]
+    },
+    {
+      "id": "childish",
+      "name": "Childish",
+      "description": "These Sims playfully embrace their inner child. They can Play with Children's Toys regardless of age and become Happy around children.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "clumsy",
+      "name": "Clumsy",
+      "description": "These Sims tend to fail more often at physical activities and tend to laugh at failure.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "creative",
+      "name": "Creative",
+      "description": "These Sims tend to be Inspired, can Share Creative Ideas with other Sims, and may become upset if they're not creative for a period of time.",
+      "category": "hobby",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "evil",
+      "name": "Evil",
+      "description": "These Sims become Happy around Sims with negative Moodlets, can be Mean to other Sims, and become Angry when witnessing altruistic behavior.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "good"
+      ]
+    },
+    {
+      "id": "family_oriented",
+      "name": "Family-Oriented",
+      "description": "These Sims become Happy and build stronger relationships around family members. They can Discuss Family at any time.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "hates_children"
+      ]
+    },
+    {
+      "id": "foodie",
+      "name": "Foodie",
+      "description": "These Sims are passionate about food. They become Happy when eating good food and can Discuss Favorite Food and Critique Cooking.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "genius",
+      "name": "Genius",
+      "description": "These Sims tend to be Focused, can Share Big Ideas with other Sims, and may become upset if they're not intellectually stimulated.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "gloomy",
+      "name": "Gloomy",
+      "description": "These Sims tend to be Sad more often than other Sims.",
+      "category": "emotional",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "cheerful"
+      ]
+    },
+    {
+      "id": "good",
+      "name": "Good",
+      "description": "These Sims become Happy when helping other Sims and become Sad when witnessing negative behavior.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "evil",
+        "mean"
+      ]
+    },
+    {
+      "id": "goofball",
+      "name": "Goofball",
+      "description": "These Sims become Playful more often and can Tell Jokes to other Sims.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "hates_children",
+      "name": "Hates Children",
+      "description": "These Sims become Tense around children and may become Angry when children are present.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "family_oriented"
+      ]
+    },
+    {
+      "id": "hot_headed",
+      "name": "Hot-Headed",
+      "description": "These Sims become Angry more easily and can Rant to other Sims.",
+      "category": "emotional",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "insane",
+      "name": "Insane",
+      "description": "These Sims can Talk to Themselves and may experience random mood changes.",
+      "category": "emotional",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "jealous",
+      "name": "Jealous",
+      "description": "These Sims become Tense when their romantic partner interacts with other Sims.",
+      "category": "emotional",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "kleptomaniac",
+      "name": "Kleptomaniac",
+      "description": "These Sims can Steal items from other Sims' homes and may feel the urge to steal.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "lazy",
+      "name": "Lazy",
+      "description": "These Sims become Tired more quickly and prefer relaxing activities.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "active"
+      ]
+    },
+    {
+      "id": "loner",
+      "name": "Loner",
+      "description": "These Sims become Tense around strangers, become Embarrassed more often in social situations, but gain powerful Moodlets when alone.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "outgoing"
+      ]
+    },
+    {
+      "id": "loves_outdoors",
+      "name": "Loves Outdoors",
+      "description": "These Sims become Happy when outside and become Sad when they've been inside for too long.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "mean",
+      "name": "Mean",
+      "description": "These Sims become Happy when being Mean or Mischievous to other Sims and become Sad when around positive Moodlets.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "good"
+      ]
+    },
+    {
+      "id": "music_lover",
+      "name": "Music Lover",
+      "description": "These Sims gain powerful Moodlets from listening to music and can Discuss Favorite Music with other Sims.",
+      "category": "hobby",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "neat",
+      "name": "Neat",
+      "description": "These Sims become Uncomfortable in dirty surroundings, can Clean more efficiently, and can Discuss Cleanliness Standards.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "slob"
+      ]
+    },
+    {
+      "id": "noncommittal",
+      "name": "Noncommittal",
+      "description": "These Sims become Bored more quickly and tend to quit social interactions and activities earlier than other Sims.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "outgoing",
+      "name": "Outgoing",
+      "description": "These Sims become Happy when around other Sims and become Sad when alone for too long.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "loner"
+      ]
+    },
+    {
+      "id": "perfectionist",
+      "name": "Perfectionist",
+      "description": "These Sims take longer to craft items but tend to make them higher quality, and can Discuss Perfectionism with other Sims.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "romantic",
+      "name": "Romantic",
+      "description": "These Sims become Flirty more often and can Discuss Romantic Literature with other Sims.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "self_assured",
+      "name": "Self-Assured",
+      "description": "These Sims tend to be Confident, can Pump Up other Sims, and will become Confident more often than other Sims.",
+      "category": "emotional",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "slob",
+      "name": "Slob",
+      "description": "These Sims are not affected by dirty surroundings, make household items dirty more quickly, and can Discuss Mess with other Sims.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "neat"
+      ]
+    },
+    {
+      "id": "snob",
+      "name": "Snob",
+      "description": "These Sims become Confident around Sims with refined tastes and become Uncomfortable around Sims that are less refined.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "unflirty",
+      "name": "Unflirty",
+      "description": "These Sims become Embarrassed more easily in romantic situations and may struggle with romantic interactions.",
+      "category": "social",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "romantic"
+      ]
+    },
+    {
+      "id": "unlucky",
+      "name": "Unlucky",
+      "description": "These Sims experience more negative random events and may have worse luck in various activities.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "vegetarian",
+      "name": "Vegetarian",
+      "description": "These Sims become Uncomfortable when eating meat and prefer vegetarian meals.",
+      "category": "lifestyle",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "workaholic",
+      "name": "Workaholic",
+      "description": "These Sims become Tense when not working and may work longer hours than other Sims.",
+      "category": "lifestyle",
+      "pack": "get_to_work",
+      "conflictingTraits": []
+    },
+    {
+      "id": "business_savvy",
+      "name": "Business Savvy",
+      "description": "These Sims are better at running businesses and gain bonuses in business-related activities.",
+      "category": "lifestyle",
+      "pack": "get_to_work",
+      "conflictingTraits": []
+    },
+    {
+      "id": "dance_machine",
+      "name": "Dance Machine",
+      "description": "These Sims become Happy when dancing and can perform special dance moves.",
+      "category": "hobby",
+      "pack": "get_together",
+      "conflictingTraits": []
+    },
+    {
+      "id": "bro",
+      "name": "Bro",
+      "description": "These Sims become Happy when working out with friends and can perform special social interactions.",
+      "category": "social",
+      "pack": "get_together",
+      "conflictingTraits": []
+    },
+    {
+      "id": "party_animal",
+      "name": "Party Animal",
+      "description": "These Sims become Happy at parties and may become Sad when not partying enough.",
+      "category": "social",
+      "pack": "get_together",
+      "conflictingTraits": [
+        "loner"
+      ]
+    },
+    {
+      "id": "city_native",
+      "name": "City Native",
+      "description": "These Sims become Happy in urban environments and may struggle in rural settings.",
+      "category": "lifestyle",
+      "pack": "city_living",
+      "conflictingTraits": []
+    },
+    {
+      "id": "street_art",
+      "name": "Street Art",
+      "description": "These Sims can create street art and gain inspiration from urban environments.",
+      "category": "hobby",
+      "pack": "city_living",
+      "conflictingTraits": []
+    },
+    {
+      "id": "food_critic",
+      "name": "Food Critic",
+      "description": "These Sims can critique food and gain bonuses when eating at restaurants.",
+      "category": "lifestyle",
+      "pack": "city_living",
+      "conflictingTraits": []
+    },
+    {
+      "id": "animal_whisperer",
+      "name": "Animal Whisperer",
+      "description": "These Sims have better relationships with animals and can train them more effectively.",
+      "category": "social",
+      "pack": "cats_and_dogs",
+      "conflictingTraits": []
+    },
+    {
+      "id": "cat_lover",
+      "name": "Cat Lover",
+      "description": "These Sims become Happy around cats and may prefer feline companions.",
+      "category": "social",
+      "pack": "cats_and_dogs",
+      "conflictingTraits": []
+    },
+    {
+      "id": "dog_lover",
+      "name": "Dog Lover",
+      "description": "These Sims become Happy around dogs and may prefer canine companions.",
+      "category": "social",
+      "pack": "cats_and_dogs",
+      "conflictingTraits": []
+    },
+    {
+      "id": "weather_pensive",
+      "name": "Weather Pensive",
+      "description": "These Sims become Focused during certain weather conditions and may contemplate more.",
+      "category": "emotional",
+      "pack": "seasons",
+      "conflictingTraits": []
+    },
+    {
+      "id": "storm_chaser",
+      "name": "Storm Chaser",
+      "description": "These Sims become Excited during storms and may seek out extreme weather.",
+      "category": "lifestyle",
+      "pack": "seasons",
+      "conflictingTraits": []
+    },
+    {
+      "id": "attention_seeker",
+      "name": "Attention Seeker",
+      "description": "These Sims become Happy when in the spotlight and may become Sad when ignored.",
+      "category": "social",
+      "pack": "get_famous",
+      "conflictingTraits": [
+        "loner"
+      ]
+    },
+    {
+      "id": "dramatic",
+      "name": "Dramatic",
+      "description": "These Sims experience emotions more intensely and may overreact to situations.",
+      "category": "emotional",
+      "pack": "get_famous",
+      "conflictingTraits": []
+    },
+    {
+      "id": "diva",
+      "name": "Diva",
+      "description": "These Sims become Confident when treated like celebrities and may demand special treatment.",
+      "category": "social",
+      "pack": "get_famous",
+      "conflictingTraits": []
+    },
+    {
+      "id": "child_of_the_islands",
+      "name": "Child of the Islands",
+      "description": "These Sims become Happy in island environments and may struggle in urban settings.",
+      "category": "lifestyle",
+      "pack": "island_living",
+      "conflictingTraits": [
+        "city_native"
+      ]
+    },
+    {
+      "id": "beach_life",
+      "name": "Beach Life",
+      "description": "These Sims become Happy at the beach and may prefer coastal living.",
+      "category": "lifestyle",
+      "pack": "island_living",
+      "conflictingTraits": []
+    },
+    {
+      "id": "quick_learner",
+      "name": "Quick Learner",
+      "description": "These Sims learn skills faster and may excel in academic environments.",
+      "category": "lifestyle",
+      "pack": "discover_university",
+      "conflictingTraits": []
+    },
+    {
+      "id": "socially_awkward",
+      "name": "Socially Awkward",
+      "description": "These Sims may struggle in social situations and become Embarrassed more easily.",
+      "category": "social",
+      "pack": "discover_university",
+      "conflictingTraits": [
+        "outgoing"
+      ]
+    },
+    {
+      "id": "responsible",
+      "name": "Responsible",
+      "description": "These Sims are more likely to complete tasks and may become Tense when things are disorganized.",
+      "category": "lifestyle",
+      "pack": "discover_university",
+      "conflictingTraits": [
+        "noncommittal"
+      ]
+    },
+    {
+      "id": "environmentalist",
+      "name": "Environmentalist",
+      "description": "These Sims become Happy when engaging in eco-friendly activities and may become Sad when witnessing pollution.",
+      "category": "lifestyle",
+      "pack": "eco_lifestyle",
+      "conflictingTraits": []
+    },
+    {
+      "id": "freegan",
+      "name": "Freegan",
+      "description": "These Sims prefer to live sustainably and may avoid traditional consumerism.",
+      "category": "lifestyle",
+      "pack": "eco_lifestyle",
+      "conflictingTraits": []
+    },
+    {
+      "id": "adventurous",
+      "name": "Adventurous",
+      "description": "These Sims become Excited when exploring new places and may seek out thrilling experiences.",
+      "category": "lifestyle",
+      "pack": "snowy_escape",
+      "conflictingTraits": []
+    },
+    {
+      "id": "proper",
+      "name": "Proper",
+      "description": "These Sims prefer formal behavior and may become Uncomfortable in casual situations.",
+      "category": "social",
+      "pack": "snowy_escape",
+      "conflictingTraits": [
+        "goofball"
+      ]
+    },
+    {
+      "id": "animal_enthusiast",
+      "name": "Animal Enthusiast",
+      "description": "These Sims become Happy around all types of animals and may prefer rural living.",
+      "category": "social",
+      "pack": "cottage_living",
+      "conflictingTraits": []
+    },
+    {
+      "id": "simple_living",
+      "name": "Simple Living",
+      "description": "These Sims prefer a minimalist lifestyle and may become Uncomfortable with excessive luxury.",
+      "category": "lifestyle",
+      "pack": "cottage_living",
+      "conflictingTraits": [
+        "snob"
+      ]
+    },
+    {
+      "id": "overachiever",
+      "name": "Overachiever",
+      "description": "These Sims strive for excellence and may become Tense when not performing at their best.",
+      "category": "lifestyle",
+      "pack": "high_school_years",
+      "conflictingTraits": [
+        "lazy"
+      ]
+    },
+    {
+      "id": "socially_gifted",
+      "name": "Socially Gifted",
+      "description": "These Sims excel in social situations and may become popular more easily.",
+      "category": "social",
+      "pack": "high_school_years",
+      "conflictingTraits": [
+        "socially_awkward"
+      ]
+    },
+    {
+      "id": "close_knit",
+      "name": "Close-Knit",
+      "description": "These Sims value family relationships and may become Sad when separated from loved ones.",
+      "category": "social",
+      "pack": "growing_together",
+      "conflictingTraits": [
+        "loner"
+      ]
+    },
+    {
+      "id": "loyal",
+      "name": "Loyal",
+      "description": "These Sims are committed to their relationships and may become Angry when betrayed.",
+      "category": "social",
+      "pack": "growing_together",
+      "conflictingTraits": [
+        "noncommittal"
+      ]
+    },
+    {
+      "id": "horse_lover",
+      "name": "Horse Lover",
+      "description": "These Sims become Happy around horses and may prefer equestrian activities.",
+      "category": "social",
+      "pack": "horse_ranch",
+      "conflictingTraits": []
+    },
+    {
+      "id": "country_living",
+      "name": "Country Living",
+      "description": "These Sims prefer rural environments and may become Uncomfortable in urban settings.",
+      "category": "lifestyle",
+      "pack": "horse_ranch",
+      "conflictingTraits": [
+        "city_native"
+      ]
+    },
+    {
+      "id": "community_oriented",
+      "name": "Community-Oriented",
+      "description": "These Sims value community relationships and may become Happy when helping neighbors.",
+      "category": "social",
+      "pack": "for_rent",
+      "conflictingTraits": []
+    },
+    {
+      "id": "homebody",
+      "name": "Homebody",
+      "description": "These Sims become Happy at home and may become Uncomfortable when away for too long.",
+      "category": "lifestyle",
+      "pack": "for_rent",
+      "conflictingTraits": [
+        "loves_outdoors"
+      ]
+    },
+    {
+      "id": "angelic",
+      "name": "Angelic",
+      "description": "These toddlers are well-behaved and rarely cause trouble.",
+      "category": "toddler",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "wild"
+      ]
+    },
+    {
+      "id": "charmer",
+      "name": "Charmer",
+      "description": "These toddlers are naturally charming and can easily win over adults.",
+      "category": "toddler",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "clumsy",
+      "name": "Clumsy",
+      "description": "These toddlers are more likely to fall and make messes.",
+      "category": "toddler",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "fussy",
+      "name": "Fussy",
+      "description": "These toddlers are picky eaters and may be harder to please.",
+      "category": "toddler",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "independent",
+      "name": "Independent",
+      "description": "These toddlers prefer to do things on their own and may resist help.",
+      "category": "toddler",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "inquisitive",
+      "name": "Inquisitive",
+      "description": "These toddlers are curious and love to explore their surroundings.",
+      "category": "toddler",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "silly",
+      "name": "Silly",
+      "description": "These toddlers are playful and love to make others laugh.",
+      "category": "toddler",
+      "pack": "base_game",
+      "conflictingTraits": []
+    },
+    {
+      "id": "wild",
+      "name": "Wild",
+      "description": "These toddlers are energetic and may be harder to control.",
+      "category": "toddler",
+      "pack": "base_game",
+      "conflictingTraits": [
+        "angelic"
+      ]
+    },
+    {
+      "id": "calm",
+      "name": "Calm",
+      "description": "These infants are generally peaceful and easy to care for.",
+      "category": "infant",
+      "pack": "growing_together",
+      "conflictingTraits": [
+        "wiggly"
+      ]
+    },
+    {
+      "id": "cautious",
+      "name": "Cautious",
+      "description": "These infants are wary of new experiences and may need more reassurance.",
+      "category": "infant",
+      "pack": "growing_together",
+      "conflictingTraits": []
+    },
+    {
+      "id": "fussy",
+      "name": "Fussy",
+      "description": "These infants are easily upset and may cry more often.",
+      "category": "infant",
+      "pack": "growing_together",
+      "conflictingTraits": [
+        "sunny"
+      ]
+    },
+    {
+      "id": "giggly",
+      "name": "Giggly",
+      "description": "These infants laugh easily and bring joy to those around them.",
+      "category": "infant",
+      "pack": "growing_together",
+      "conflictingTraits": []
+    },
+    {
+      "id": "intense",
+      "name": "Intense",
+      "description": "These infants experience emotions strongly and may be more dramatic.",
+      "category": "infant",
+      "pack": "growing_together",
+      "conflictingTraits": []
+    },
+    {
+      "id": "sunny",
+      "name": "Sunny",
+      "description": "These infants are generally happy and pleasant to be around.",
+      "category": "infant",
+      "pack": "growing_together",
+      "conflictingTraits": [
+        "fussy"
+      ]
+    },
+    {
+      "id": "wiggly",
+      "name": "Wiggly",
+      "description": "These infants are active and may be harder to hold or change.",
+      "category": "infant",
+      "pack": "growing_together",
+      "conflictingTraits": [
+        "calm"
+      ]
+    },
+    {
+      "id": "paranoid",
+      "name": "Paranoid",
+      "description": "These Sims become Tense more easily and may be suspicious of others' motives.",
+      "category": "emotional",
+      "pack": "strangerville",
+      "conflictingTraits": []
+    },
+    {
+      "id": "squeamish",
+      "name": "Squeamish",
+      "description": "These Sims become Uncomfortable around gross things and may avoid messy situations.",
+      "category": "lifestyle",
+      "pack": "outdoor_retreat",
+      "conflictingTraits": [
+        "slob"
+      ]
+    },
+    {
+      "id": "insider",
+      "name": "Insider",
+      "description": "These Sims are well-connected and may have access to exclusive information or opportunities.",
+      "category": "social",
+      "pack": "get_famous",
+      "conflictingTraits": []
+    },
+    {
+      "id": "self_absorbed",
+      "name": "Self-Absorbed",
+      "description": "These Sims are focused on themselves and may struggle to empathize with others.",
+      "category": "social",
+      "pack": "get_famous",
+      "conflictingTraits": [
+        "good"
+      ]
+    },
+    {
+      "id": "lactose_intolerant",
+      "name": "Lactose Intolerant",
+      "description": "These Sims become Uncomfortable when consuming dairy products.",
+      "category": "lifestyle",
+      "pack": "cottage_living",
+      "conflictingTraits": []
+    },
+    {
+      "id": "maker",
+      "name": "Maker",
+      "description": "These Sims enjoy crafting and creating things with their hands.",
+      "category": "hobby",
+      "pack": "eco_lifestyle",
+      "conflictingTraits": []
+    },
+    {
+      "id": "recycle_disciple",
+      "name": "Recycle Disciple",
+      "description": "These Sims are passionate about recycling and reducing waste.",
+      "category": "lifestyle",
+      "pack": "eco_lifestyle",
+      "conflictingTraits": []
+    },
+    {
+      "id": "green_fiend",
+      "name": "Green Fiend",
+      "description": "These Sims are obsessed with eco-friendly living and may judge others for wasteful behavior.",
+      "category": "lifestyle",
+      "pack": "eco_lifestyle",
+      "conflictingTraits": []
+    },
+    {
+      "id": "child_of_the_ocean",
+      "name": "Child of the Ocean",
+      "description": "These Sims have a deep connection to the ocean and marine life.",
+      "category": "lifestyle",
+      "pack": "island_living",
+      "conflictingTraits": []
+    },
+    {
+      "id": "practice_makes_perfect",
+      "name": "Practice Makes Perfect",
+      "description": "These Sims gain skill faster through repetitive practice.",
+      "category": "lifestyle",
+      "pack": "high_school_years",
+      "conflictingTraits": []
+    },
+    {
+      "id": "cringe",
+      "name": "Cringe",
+      "description": "These Sims may make others feel Embarrassed with their awkward behavior.",
+      "category": "social",
+      "pack": "high_school_years",
+      "conflictingTraits": [
+        "socially_gifted"
+      ]
+    },
+    {
+      "id": "nosy",
+      "name": "Nosy",
+      "description": "These Sims are curious about others' business and may eavesdrop or gossip.",
+      "category": "social",
+      "pack": "growing_together",
+      "conflictingTraits": []
+    },
+    {
+      "id": "generous",
+      "name": "Generous",
+      "description": "These Sims enjoy giving gifts and helping others, often at their own expense.",
+      "category": "social",
+      "pack": "growing_together",
+      "conflictingTraits": [
+        "self_absorbed"
+      ]
+    },
+    {
+      "id": "rancher",
+      "name": "Rancher",
+      "description": "These Sims are skilled at caring for livestock and prefer rural living.",
+      "category": "lifestyle",
+      "pack": "horse_ranch",
+      "conflictingTraits": [
+        "city_native"
+      ]
+    },
+    {
+      "id": "champion",
+      "name": "Champion",
+      "description": "These Sims are competitive and strive to be the best at everything they do.",
+      "category": "lifestyle",
+      "pack": "horse_ranch",
+      "conflictingTraits": []
+    }
+  ]
+}

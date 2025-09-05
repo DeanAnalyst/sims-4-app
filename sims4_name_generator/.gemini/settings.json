@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "dart": {
+      "command": "dart",
+      "args": [
+        "mcp-server",
+        "--force-roots-fallback"
+      ]
+    },
+    "js-mcp": {
+      "command": "npx",
+      "args": [
+        "js-mcp"
+      ]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "octagon": {
+      "url": "https://mcp.octagonagents.com/mcp"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "region": "english",
+  "gender": "female",
+  "firstNames": [
+    "Alice",
+    "Beatrice",
+    "Catherine",
+    "Diana",
+    "Elizabeth",
+    "Florence",
+    "Grace",
+    "Helen",
+    "Isabella",
+    "Jane",
+    "Katherine",
+    "Lucy",
+    "Margaret",
+    "Natalie",
+    "Olivia"
+  ],
+  "lastNames": [
+    "Anderson",
+    "Brown",
+    "Clark",
+    "Davis",
+    "Evans",
+    "Fisher",
+    "Green",
+    "Harris",
+    "Johnson",
+    "King",
+    "Lewis",
+    "Miller",
+    "Nelson",
+    "Parker",
+    "Roberts"
+  ]
+}
